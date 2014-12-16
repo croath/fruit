@@ -28,6 +28,7 @@
         self.incrementRoll = YES;
         self.downRoll = YES;
         self.charAnimationDuration = 0.3;
+        self.lastInt = NSIntegerMax;
         self.waitingDict = [NSMutableDictionary dictionary];
         self.numArray = [NSMutableArray array];
         self.fruitQ = dispatch_queue_create("com.croath.crfruitview.fruitq", DISPATCH_QUEUE_SERIAL);
@@ -39,6 +40,7 @@
     NSLog(@"%ld", (long)integer);
     dispatch_async(self.fruitQ, ^{
         dispatch_suspend(self.fruitQ);
+        NSInteger tmpInt = self.lastInt;
         self.lastInt = self.currentInt;
         self.currentInt = integer;
         
@@ -66,11 +68,12 @@
             
             NSMutableArray *array = [NSMutableArray array];
             
-            if ([lastChar isEqualToString:@""] || [currentChar isEqualToString:@""]) {
+            if ([lastChar isEqualToString:@""] || [currentChar isEqualToString:@""] || tmpInt == NSIntegerMax) {
                 [array addObject:currentChar];
             } else {
                 NSInteger currentNum = [currentChar integerValue];
                 NSInteger lastNum = [lastChar integerValue];
+                
                 if (self.incrementRoll) {
                     if (currentNum >= lastNum) {
                         for (int j = (int)lastNum + 1; j <= currentNum; j ++) {
