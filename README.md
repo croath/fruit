@@ -3,8 +3,13 @@ fruit
 
 <img src="https://raw.githubusercontent.com/croath/fruit/master/doc/fruit.gif" width=30% />
 
+###Sample
 
 Clone and checkout the sample.
+
+###How to use it?
+
+Just add .h and .m to your project.
 
 ###Wanna modify it?
 
@@ -47,3 +52,12 @@ Checkout `CRFruitView.h`:
 @property (nonatomic, assign) NSTimeInterval charAnimationDuration;
 
 ```
+
+###Contribute
+
+Fork and pull request, please.
+
+###Who's using it?
+
+If you are using it, please let me know.
+
