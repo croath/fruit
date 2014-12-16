@@ -13,25 +13,21 @@
 /*
  Margin between 2 animation characters.
  */
-
 @property (nonatomic, assign) CGFloat verticalMargin;
 
 /*
  Margin between 2 characters.
  */
-
 @property (nonatomic, assign) CGFloat horizontalMargin;
 
 /*
  Bounds size for one character.
  */
-
 @property (nonatomic, assign) CGSize charSize;
 
 /*
  Label's text's attributed dictionary.
  */
-
 @property (nonatomic, strong) NSDictionary *textAttr;
 
 /*
